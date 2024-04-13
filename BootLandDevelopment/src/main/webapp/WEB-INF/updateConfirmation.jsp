@@ -10,12 +10,12 @@
 
 <div class="container mt-5">
     <h2>Update Successful</h2>
-    <p>The part details have been successfully updated.</p>
+    <p>The property details have been successfully updated.</p>
     
     <!-- Buttons for navigation -->
     <a href="home.do" class="btn btn-primary">Go Home</a>
-    <a href="getPart.do?partId=${part.id}" class="btn btn-secondary">View Part Detail</a>
-    <a href="viewAllParts.do" class="btn btn-info">View All Parts</a>
+    <a href="getProperty.do?landAcquisitionId=${land.id}" class="btn btn-secondary">View Property Detail</a>
+    <a href="viewAllProperties.do" class="btn btn-info">View All Properties</a>
 </div>
 
 <!-- Bootstrap JS and dependencies -->

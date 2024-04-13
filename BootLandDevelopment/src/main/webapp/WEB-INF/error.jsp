@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -11,9 +13,10 @@
 <body>
     <div class="container mt-4">
         <h1 class="text-danger">Error</h1>
+        
         <c:if test="${not empty errorMessage}">
-            <div class="alert alert-danger">${errorMessage}</div>
-        </c:if>
+    		<div class="alert alert-danger">${errorMessage}</div>
+		</c:if>
 
         <!-- Styled Home Button using Bootstrap -->
         <a href="home.do" class="btn btn-primary">Home</a>

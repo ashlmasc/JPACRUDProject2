@@ -45,13 +45,15 @@
 
 <!--                 Update, Delete, and Home Buttons -->
  				<div class="text-center mt-4">
-    				<a href="updateLand.do?landId=${land.id}" class="btn btn-primary">Update Property</a>
+  					 <a href="updateProperty.do?landId=${land.id}" class="btn btn-primary">Update Property</a>
+    
     				<a href="home.do" class="btn btn-secondary">Go Home</a>
-    				<form action="deleteLand.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;">
-       				 <input type="hidden" name="landId" value="${land.id}" />
-        			<button type="submit" class="btn btn-danger">Delete Property</button>
+
+   					 <form action="deleteProperty.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;">
+        				<input type="hidden" name="landId" value="${land.id}" />
+        				<button type="submit" class="btn btn-danger">Delete Property</button>
     				</form>
-				</div>
+</div>
             </c:when>
             <c:otherwise>
                 <div class="alert alert-danger" role="alert">

@@ -57,6 +57,43 @@ public class LandAcquisitionController {
 		}
 	}
 	
+	// Update an existing property
+	@GetMapping("updateProperty.do")
+	public String updatePropertyForm(@RequestParam("landId") int id, Model model) {
+	    try {
+	        LandAcquisition land = landAcquisitionDAO.findById(id);
+	        if (land == null) {
+	            throw new IllegalArgumentException("Property with ID " + id + " not found.");
+	        }
+	        model.addAttribute("land", land);
+	        return "updateProperty"; // Path to the JSP form for updating a property
+	    } catch (IllegalArgumentException e) {
+	        model.addAttribute("errorMessage", e.getMessage());
+	        return "error";
+	    } catch (Exception e) {
+	        model.addAttribute("errorMessage", "An unexpected error has occurred while attempting to update the property.");
+	        return "error"; // General error page
+	    }
+	}
+
+	@PostMapping("updateProperty.do")
+	public String updateProperty(@RequestParam("landId") int id, LandAcquisition landAcquisition, Model model) {
+	    try {
+	        LandAcquisition updatedLand = landAcquisitionDAO.updateLandAcquisition(id, landAcquisition);
+	        if (updatedLand == null) {
+	            throw new IllegalArgumentException("Property with ID " + id + " not found.");
+	        }
+	        model.addAttribute("land", updatedLand); // Add the updated property to the model
+	        return "updateConfirmation"; // Redirect to the confirmation page
+	    } catch (IllegalArgumentException e) {
+	        model.addAttribute("errorMessage", e.getMessage());
+	        return "error";
+	    } catch (Exception e) {
+	        model.addAttribute("errorMessage", "An unexpected error has occurred while attempting to update the property.");
+	        return "error";
+	    }
+	}
+	
 	@GetMapping("viewAllProperties.do")
 	public String viewAllProperties(Model model) {
 		List<LandAcquisition> land = landAcquisitionDAO.findAll();
@@ -67,6 +104,7 @@ public class LandAcquisitionController {
 	@ExceptionHandler(Exception.class)
 	public String handleException(Exception e, Model model) {
 		e.printStackTrace();
+		System.out.println("Error message: " + e.getMessage());
 	    model.addAttribute("errorMessage", e.getMessage());
 	    return "error"; 
 	}
