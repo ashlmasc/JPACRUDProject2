@@ -39,7 +39,6 @@ public class LandAcquisitionDAOImpl implements LandAcquisitionDAO {
 	public LandAcquisition updateLandAcquisition(int id, LandAcquisition landAcquisition) {
 		LandAcquisition existingLand = em.find(LandAcquisition.class, id);
 		if (existingLand != null) {
-	        // Update fields with new values from the provided landAcquisition object
 	        existingLand.setParcelId(landAcquisition.getParcelId());
 	        existingLand.setStreetAddress(landAcquisition.getStreetAddress());
 	        existingLand.setCity(landAcquisition.getCity());
@@ -57,7 +56,6 @@ public class LandAcquisitionDAOImpl implements LandAcquisitionDAO {
 	        existingLand.setContractDate(landAcquisition.getContractDate());
 	        existingLand.setClosingDate(landAcquisition.getClosingDate());
 
-	        // Merge the updated entity back into persistence context
 	        em.merge(existingLand);
 	    }
 	    return existingLand;
@@ -65,9 +63,9 @@ public class LandAcquisitionDAOImpl implements LandAcquisitionDAO {
 
 	@Override
 	public boolean deleteLandAcquisition(int id) {
-		LandAcquisition land = em.find(LandAcquisition.class, id); // Find the part by ID
+		LandAcquisition land = em.find(LandAcquisition.class, id); 
 	    if (land != null) {
-	        em.remove(land); // Remove the part entity
+	        em.remove(land);
 	        return true;
 	    }
 	    return false;

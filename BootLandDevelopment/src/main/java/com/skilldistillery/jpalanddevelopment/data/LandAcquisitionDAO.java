@@ -5,9 +5,9 @@ import java.util.List;
 import com.skilldistillery.jpalanddevelopment.entities.LandAcquisition;
 
 public interface LandAcquisitionDAO {
-	
+
 	LandAcquisition findById(int LandAcquisitionId);
-	
+
 	List<LandAcquisition> findAll();
 
 	LandAcquisition addLandAcquisition(LandAcquisition landAcquisition);

@@ -9,5 +9,4 @@ class BootLandDevelopmentApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

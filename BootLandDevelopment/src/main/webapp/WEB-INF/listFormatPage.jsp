@@ -23,34 +23,35 @@
             <ul class="list-group">
                 <c:forEach items="${allProperties}" var="land">
     			<li class="list-group-item">
-        			<div><strong>Parcel ID:</strong> ${land.parcelId}</div>
-        			<div><strong>Street Address:</strong> ${land.streetAddress}</div>
-        			<div><strong>City:</strong> ${land.city}</div>
-        			<div><strong>County:</strong> ${land.county}</div>
-        			<div><strong>State:</strong> ${land.state}</div>
-        			<div><strong>Zip Code:</strong> ${land.zipcode}</div>
-        			<div><strong>Latitude:</strong> ${land.latitude}</div>
-        			<div><strong>Longitude:</strong> ${land.longitude}</div>
-        			<div><strong>Zoning Status:</strong> ${land.zoningStatus}</div>
-        			<div><strong>Size (acres):</strong> ${land.size}</div>
-        			<div><strong>Land Status:</strong> ${land.landStatus}</div>
-        			<div><strong>Asking Price:</strong><fmt:formatNumber value="${land.askingPrice}" type="currency" currencySymbol="$" maxFractionDigits="2" minFractionDigits="2"/></div>
-        			<div><strong>Purchase Price:</strong><fmt:formatNumber value="${land.purchasePrice}" type="currency" currencySymbol="$" maxFractionDigits="2" minFractionDigits="2"/></div>
-        			<div><strong>Utilities Status:</strong> ${land.utilitiesStatus}</div>
-        			<div><strong>Contract Date:</strong> ${land.contractDate.toString()}</div>
-        			<div><strong>Closing Date:</strong> ${land.closingDate.toString()}</div>
+            	<div><strong>Property ID:</strong> ${land.id}</div>
+        			<c:if test="${not empty land.parcelId}"><div><strong>Parcel ID:</strong> ${land.parcelId}</div></c:if>
+                    <c:if test="${not empty land.streetAddress}"><div><strong>Street Address:</strong> ${land.streetAddress}</div></c:if>
+                    <c:if test="${not empty land.city}"><div><strong>City:</strong> ${land.city}</div></c:if>
+                    <c:if test="${not empty land.county}"><div><strong>County:</strong> ${land.county}</div></c:if>
+                    <c:if test="${not empty land.state}"><div><strong>State:</strong> ${land.state}</div></c:if>
+                    <c:if test="${not empty land.zipcode}"><div><strong>Zip Code:</strong> ${land.zipcode}</div></c:if>
+                    <c:if test="${not empty land.latitude}"><div><strong>Latitude:</strong> ${land.latitude}</div></c:if>
+                    <c:if test="${not empty land.longitude}"><div><strong>Longitude:</strong> ${land.longitude}</div></c:if>
+                    <c:if test="${not empty land.zoningStatus}"><div><strong>Zoning Status:</strong> ${land.zoningStatus}</div></c:if>
+                    <c:if test="${not empty land.size}"><div><strong>Size (acres):</strong> ${land.size}</div></c:if>
+                    <c:if test="${not empty land.landStatus}"><div><strong>Land Status:</strong> ${land.landStatus}</div></c:if>
+                    <c:if test="${not empty land.askingPrice}"><div><strong>Asking Price:</strong><fmt:formatNumber value="${land.askingPrice}" type="currency" currencySymbol="$" maxFractionDigits="2" minFractionDigits="2"/></div></c:if>
+                    <c:if test="${not empty land.purchasePrice}"><div><strong>Purchase Price:</strong><fmt:formatNumber value="${land.purchasePrice}" type="currency" currencySymbol="$" maxFractionDigits="2" minFractionDigits="2"/></div></c:if>
+                    <c:if test="${not empty land.utilitiesStatus}"><div><strong>Utilities Status:</strong> ${land.utilitiesStatus}</div></c:if>
+                    <c:if test="${not empty land.contractDate}"><div><strong>Contract Date:</strong> ${land.contractDate}</div></c:if>
+                    <c:if test="${not empty land.closingDate}"><div><strong>Closing Date:</strong> ${land.closingDate}</div></c:if>
         			
         			<!-- Update and Delete buttons for each record -->
         			<div class="mt-2">
-            <a href="updateProperty.do?id=${land.id}" class="btn btn-primary btn-sm">Update</a>
-            <form action="deleteProperty.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;">
-                <input type="hidden" name="id" value="${land.id}" />
-                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-            </form>
-        </div>
-    </li>
-</c:forEach>
-            </ul>
+            			<a href="updateProperty.do?id=${land.id}" class="btn btn-primary btn-sm">Update</a>
+            			<form action="deleteProperty.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;">
+                			<input type="hidden" name="id" value="${land.id}" />
+                			<button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            			</form>
+        			</div>
+    			</li>
+			</c:forEach>
+          </ul>
         </div>
     </div>
 
