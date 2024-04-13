@@ -37,14 +37,19 @@ public class LandAcquisitionDAOImpl implements LandAcquisitionDAO {
 
 	@Override
 	public LandAcquisition updateLandAcquisition(int id, LandAcquisition landAcquisition) {
-		// TODO Auto-generated method stub
-		return null;
+		LandAcquisition existingLand = em.find(LandAcquisition.class, id);
+		em.merge(existingLand);
+		return existingLand;
 	}
 
 	@Override
 	public boolean deleteLandAcquisition(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		LandAcquisition land = em.find(LandAcquisition.class, id); // Find the part by ID
+	    if (land != null) {
+	        em.remove(land); // Remove the part entity
+	        return true;
+	    }
+	    return false;
 	}
 
 }
