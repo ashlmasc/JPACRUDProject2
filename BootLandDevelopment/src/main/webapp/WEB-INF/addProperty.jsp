@@ -3,78 +3,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Add New Property</title>
+    <title>Add New Property</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h2>Add New Property</h2>
-        <form action="addProperty.do" method="post">
-            <label for="parcelId">Parcel ID:</label>
-            <input type="text" id="parcelId" name="parcelId" required>
-            <br>
+    <div class="container mt-5">
+        <h2 class="mb-4">Add New Property</h2>
+        <form action="addProperty.do" method="post" class="needs-validation" novalidate>
+        
+            <div class="form-group">
+                <label for="parcelId">Parcel ID:</label>
+                <input type="text" class="form-control" id="parcelId" name="parcelId" required data-toggle="tooltip" title="Enter a unique Parcel ID. This field is required.">
+                <div class="invalid-feedback">
+                    Please provide a Parcel ID.
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="streetAddress">Street Address:</label>
+                <input type="text" class="form-control" id="streetAddress" name="streetAddress">
+            </div>
 
-            <label for="streetAddress">Street Address:</label>
-            <input type="text" id="streetAddress" name="streetAddress">
-            <br>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" id="city" name="city">
+            </div>
 
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city">
-            <br>
+            <div class="form-group">
+                <label for="county">County:</label>
+                <input type="text" class="form-control" id="county" name="county">
+            </div>
 
-            <label for="county">County:</label>
-            <input type="text" id="county" name="county">
-            <br>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" id="state" name="state">
+            </div>
 
-            <label for="state">State:</label>
-            <input type="text" id="state" name="state">
-            <br>
+            <div class="form-group">
+                <label for="zipcode">Zip Code:</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode">
+            </div>
 
-            <label for="zipcode">Zip Code:</label>
-            <input type="text" id="zipcode" name="zipcode">
-            <br>
+            <div class="form-group">
+                <label for="latitude">Latitude:</label>
+                <input type="number" class="form-control" step="any" id="latitude" name="latitude">
+            </div>
 
-            <label for="latitude">Latitude:</label>
-            <input type="number" step="any" id="latitude" name="latitude">
-            <br>
+            <div class="form-group">
+                <label for="longitude">Longitude:</label>
+                <input type="number" class="form-control" step="any" id="longitude" name="longitude">
+            </div>
 
-            <label for="longitude">Longitude:</label>
-            <input type="number" step="any" id="longitude" name="longitude">
-            <br>
+            <div class="form-group">
+                <label for="zoningStatus">Zoning Status:</label>
+                <input type="text" class="form-control" id="zoningStatus" name="zoningStatus">
+            </div>
 
-            <label for="zoningStatus">Zoning Status:</label>
-            <input type="text" id="zoningStatus" name="zoningStatus">
-            <br>
+            <div class="form-group">
+                <label for="size">Size (acres):</label>
+                <input type="number" class="form-control" step="any" id="size" name="size">
+            </div>
 
-            <label for="size">Size (acres):</label>
-            <input type="number" step="any" id="size" name="size">
-            <br>
+            <div class="form-group">
+                <label for="landStatus">Land Status:</label>
+                <input type="text" class="form-control" id="landStatus" name="landStatus">
+            </div>
 
-            <label for="landStatus">Land Status:</label>
-            <input type="text" id="landStatus" name="landStatus">
-            <br>
+            <div class="form-group">
+                <label for="askingPrice">Asking Price:</label>
+                <input type="number" class="form-control" step="0.01" id="askingPrice" name="askingPrice">
+            </div>
 
-            <label for="askingPrice">Asking Price:</label>
-            <input type="number" step="0.01" id="askingPrice" name="askingPrice">
-            <br>
+            <div class="form-group">
+                <label for="purchasePrice">Purchase Price:</label>
+                <input type="number" class="form-control" step="0.01" id="purchasePrice" name="purchasePrice">
+            </div>
 
-            <label for="purchasePrice">Purchase Price:</label>
-            <input type="number" step="0.01" id="purchasePrice" name="purchasePrice">
-            <br>
+            <div class="form-group">
+                <label for="utilitiesStatus">Utilities Status:</label>
+                <input type="text" class="form-control" id="utilitiesStatus" name="utilitiesStatus">
+            </div>
 
-            <label for="utilitiesStatus">Utilities Status:</label>
-            <input type="text" id="utilitiesStatus" name="utilitiesStatus">
-            <br>
+            <div class="form-group">
+                <label for="contractDate">Contract Date:</label>
+                <input type="date" class="form-control" id="contractDate" name="contractDate">
+            </div>
 
-            <label for="contractDate">Contract Date:</label>
-            <input type="date" id="contractDate" name="contractDate">
-            <br>
+            <div class="form-group">
+                <label for="closingDate">Closing Date:</label>
+                <input type="date" class="form-control" id="closingDate" name="closingDate">
+            </div>
+            
+            <a href="home.do" class="btn btn-secondary" data-toggle="tooltip" title="Cancel add and go home">Cancel</a>
 
-            <label for="closingDate">Closing Date:</label>
-            <input type="date" id="closingDate" name="closingDate">
-            <br>
-
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
+      <!-- Bootstrap JS, Popper.js, and jQuery for tooltips -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip(); // Initialize tooltips
+        });
+    </script>
 </body>
 </html>
