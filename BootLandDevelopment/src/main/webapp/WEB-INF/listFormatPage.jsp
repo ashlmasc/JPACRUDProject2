@@ -42,11 +42,11 @@
         			
         			<!-- Update and Delete buttons for each record -->
         			<div class="mt-2">
-<%--             <a href="updateLand.do?landId=${land.id}" class="btn btn-primary btn-sm">Update</a> --%>
-<!--             <form action="deleteLand.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;"> -->
-<%--                 <input type="hidden" name="landId" value="${land.id}" /> --%>
-<!--                 <button type="submit" class="btn btn-danger btn-sm">Delete</button> -->
-<!--             </form> -->
+            <a href="updateProperty.do?id=${land.id}" class="btn btn-primary btn-sm">Update</a>
+            <form action="deleteProperty.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;">
+                <input type="hidden" name="id" value="${land.id}" />
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
         </div>
     </li>
 </c:forEach>

@@ -33,7 +33,6 @@
         <h2 class="h3 mb-3">View List of Properties</h2>
         <!-- Buttons for List and Table format -->
         <a href="viewAllProperties.do"class="btn btn-outline-info mb-2">List Format</a>
-        <a href="viewAllLands.do" class="btn btn-outline-info mb-2">Table Format</a>
     </div>
 </div>
 
@@ -42,6 +41,7 @@
     <div class="col-md-8 text-center">
         <a href="addProperty.do" class="btn btn-outline-success">Add Property</a>
     </div>
+</div>
 </div>
 
 
