@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <!DOCTYPE html>
 <html>
@@ -37,18 +37,18 @@
 <%--                 <div class="mb-3"><strong>Vehicle Section:</strong> ${part.vehicleSection}</div> --%>
 
 <!--                 Update, Delete, and Home Buttons -->
-                <div class="text-center mt-4">
-                    <a href="updatePart.do?partId=${part.id}" class="btn btn-primary">Update Part</a>
-                    <a href="home.do" class="btn btn-secondary">Go Home</a>
-                    <form action="deletePart.do" method="post" onsubmit="return confirm('Are you sure you want to delete this part?');" style="display: inline-block;">
-                        <input type="hidden" name="partId" value="${part.id}">
-                        <input type="submit" value="Delete Part" class="btn btn-danger">
-                    </form>
-                </div>
+<!--                 <div class="text-center mt-4"> -->
+<%--                     <a href="updatePart.do?partId=${part.id}" class="btn btn-primary">Update Part</a> --%>
+<!--                     <a href="home.do" class="btn btn-secondary">Go Home</a> -->
+<!--                     <form action="deletePart.do" method="post" onsubmit="return confirm('Are you sure you want to delete this part?');" style="display: inline-block;"> -->
+<%--                         <input type="hidden" name="landId" value="${land.id}"> --%>
+<!--                         <input type="submit" value="Delete Property" class="btn btn-danger"> -->
+<!--                     </form> -->
+<!--                 </div> -->
             </c:when>
             <c:otherwise>
                 <div class="alert alert-danger" role="alert">
-                    Part not found.
+                    Property not found.
                 </div>
             </c:otherwise>
         </c:choose>

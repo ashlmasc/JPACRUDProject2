@@ -14,7 +14,7 @@
             <br>
 
             <label for="streetAddress">Street Address:</label>
-            <input type="text" id="streetAddress" name="streetAddress" required>
+            <input type="text" id="streetAddress" name="streetAddress">
             <br>
 
             <label for="city">City:</label>

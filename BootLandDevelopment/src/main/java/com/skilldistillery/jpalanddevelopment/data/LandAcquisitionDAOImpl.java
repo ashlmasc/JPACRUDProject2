@@ -31,8 +31,8 @@ public class LandAcquisitionDAOImpl implements LandAcquisitionDAO {
 
 	@Override
 	public LandAcquisition addLandAcquisition(LandAcquisition landAcquisition) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(landAcquisition); // Persist the part entity to the database
+	    return landAcquisition; // The persisted part will now have a generated ID
 	}
 
 	@Override

@@ -38,16 +38,16 @@ public class LandAcquisitionController {
 
 	// Create a new property
 	@GetMapping("addProperty.do")
-	public String addPartForm() {
+	public String addPropertyForm() {
 		return "addProperty";
 	}
 
 	// addProperty without adding photo
 	@PostMapping("addProperty.do")
-	public String createPart(LandAcquisition prop, Model model) {
+	public String createProperty(LandAcquisition land, Model model) {
 		try {
-			prop = landAcquisitionDAO.addLandAcquisition(prop);
-			model.addAttribute("land", prop);
+			land = landAcquisitionDAO.addLandAcquisition(land);
+			model.addAttribute("land", land);
 			return "land/show";
 		} catch (Exception e) {
 			model.addAttribute("errorMessage", "Error creating property: " + e.getMessage());

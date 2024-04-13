@@ -21,7 +21,7 @@
     <div class="row mb-4">
         <div class="col-md-8 mx-auto">
             <form action="getPropertyDetail.do" method="GET" class="form-inline justify-content-center">
-                <input type="text" class="form-control w-50" id="landAcquisitionId" name="landAcquisitionId" placeholder="Enter Property ID to Search for Part" required>
+                <input type="text" class="form-control w-50" id="landAcquisitionId" name="landAcquisitionId" placeholder="Enter Property ID to Search for Property" required>
                 <button type="submit" class="btn btn-outline-primary ml-2">Show Property</button>
             </form>
         </div>
