@@ -2,6 +2,7 @@ package com.skilldistillery.jpalanddevelopment.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,11 +48,17 @@ public class LandAcquisitionController {
 		try {
 			prop = landAcquisitionDAO.addLandAcquisition(prop);
 			model.addAttribute("land", prop);
-			return "show";
+			return "land/show";
 		} catch (Exception e) {
 			model.addAttribute("errorMessage", "Error creating property: " + e.getMessage());
 			return "error";
 		}
+	}
+	
+	@ExceptionHandler(Exception.class)
+	public String handleException(Exception e, Model model) {
+	    model.addAttribute("errorMessage", e.getMessage());
+	    return "error"; 
 	}
 
 }
