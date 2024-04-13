@@ -16,35 +16,63 @@
     <div class="container mt-5">
         <c:choose>
             <c:when test="${not empty land}">
-                <h1 class="display-4 text-center mb-4">${land.id} Details</h1>
+                <h1 class="display-4 text-center mb-4">Property Details</h1>
                 
+                <!-- Display Auto-Generated ID-->
+            <div class="mb-3"> <strong>Property ID:</strong> ${land.id}</div>
                 
-<!--                 <div class="text-center mb-4"> -->
-<%--                     <c:if test="${not empty part.photoURL}"> --%>
-<%--                         <img src="${part.photoURL}" alt="Part Photo" class="img-fluid" style="max-width: 300px; max-height: 300px;"> --%>
-<%--                     </c:if> --%>
-<!--                 </div> -->
-
+            <c:if test="${not empty land.parcelId}">
                 <div class="mb-3"><strong>Parcel ID:</strong> ${land.parcelId}</div>
-   				<div class="mb-3"><strong>Street Address:</strong> ${land.streetAddress}</div>
-    			<div class="mb-3"><strong>City:</strong> ${land.city}</div>
-   				 <div class="mb-3"><strong>County:</strong> ${land.county}</div>
-    			<div class="mb-3"><strong>State:</strong> ${land.state}</div>
-    			<div class="mb-3"><strong>Zipcode:</strong> ${land.zipcode}</div>
-    			<div class="mb-3"><strong>Latitude:</strong> ${land.latitude}</div>
-    			<div class="mb-3"><strong>Longitude:</strong> ${land.longitude}</div>
-    			<div class="mb-3"><strong>Zoning Status:</strong> ${land.zoningStatus}</div>
-    			<div class="mb-3"><strong>Size (acres):</strong> ${land.size}</div>
-    			<div class="mb-3"><strong>Land Status:</strong> ${land.landStatus}</div>
-    			<div class="mb-3"><strong>Asking Price:</strong> <fmt:formatNumber value="${land.askingPrice}" type="currency" currencySymbol="$" maxFractionDigits="2" /></div>
-    			<div class="mb-3"><strong>Purchase Price:</strong> <fmt:formatNumber value="${land.purchasePrice}" type="currency" currencySymbol="$" maxFractionDigits="2" /></div>
-    			<div class="mb-3"><strong>Utilities Status:</strong> ${land.utilitiesStatus}</div>
-    			<div class="mb-3"><strong>Contract Date:</strong> ${land.contractDate}</div>
-    			<div class="mb-3"><strong>Closing Date:</strong> ${land.closingDate}</div>
+            </c:if>
+            <c:if test="${not empty land.streetAddress}">
+                <div class="mb-3"><strong>Street Address:</strong> ${land.streetAddress}</div>
+            </c:if>
+            <c:if test="${not empty land.city}">
+                <div class="mb-3"><strong>City:</strong> ${land.city}</div>
+            </c:if>
+            <c:if test="${not empty land.county}">
+                <div class="mb-3"><strong>County:</strong> ${land.county}</div>
+            </c:if>
+            <c:if test="${not empty land.state}">
+                <div class="mb-3"><strong>State:</strong> ${land.state}</div>
+            </c:if>
+            <c:if test="${not empty land.zipcode}">
+                <div class="mb-3"><strong>Zipcode:</strong> ${land.zipcode}</div>
+            </c:if>
+            <c:if test="${not empty land.latitude}">
+                <div class="mb-3"><strong>Latitude:</strong> ${land.latitude}</div>
+            </c:if>
+            <c:if test="${not empty land.longitude}">
+                <div class="mb-3"><strong>Longitude:</strong> ${land.longitude}</div>
+            </c:if>
+            <c:if test="${not empty land.zoningStatus}">
+                <div class="mb-3"><strong>Zoning Status:</strong> ${land.zoningStatus}</div>
+            </c:if>
+            <c:if test="${not empty land.size}">
+                <div class="mb-3"><strong>Size (acres):</strong> ${land.size}</div>
+            </c:if>
+            <c:if test="${not empty land.landStatus}">
+                <div class="mb-3"><strong>Land Status:</strong> ${land.landStatus}</div>
+            </c:if>
+            <c:if test="${not empty land.askingPrice}">
+                <div class="mb-3"><strong>Asking Price:</strong> <fmt:formatNumber value="${land.askingPrice}" type="currency" currencySymbol="$" maxFractionDigits="2" /></div>
+            </c:if>
+            <c:if test="${not empty land.purchasePrice}">
+                <div class="mb-3"><strong>Purchase Price:</strong> <fmt:formatNumber value="${land.purchasePrice}" type="currency" currencySymbol="$" maxFractionDigits="2" /></div>
+            </c:if>
+            <c:if test="${not empty land.utilitiesStatus}">
+                <div class="mb-3"><strong>Utilities Status:</strong> ${land.utilitiesStatus}</div>
+            </c:if>
+            <c:if test="${not empty land.contractDate}">
+                <div class="mb-3"><strong>Contract Date:</strong> ${land.contractDate}</div>
+            </c:if>
+            <c:if test="${not empty land.closingDate}">
+                <div class="mb-3"><strong>Closing Date:</strong> ${land.closingDate}</div>
+            </c:if>
 
 <!--                 Update, Delete, and Home Buttons -->
  				<div class="text-center mt-4">
-  					 <a href="updateProperty.do?landId=${land.id}" class="btn btn-primary">Update Property</a>
+  					 <a href="updateProperty.do?id=${land.id}" class="btn btn-primary">Update Property</a>
     
     				<a href="home.do" class="btn btn-secondary">Go Home</a>
 
