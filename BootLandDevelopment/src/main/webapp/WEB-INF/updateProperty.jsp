@@ -14,7 +14,7 @@
     <h2>Update Property</h2>
     <form action="updateProperty.do" method="post">
         <!-- Hidden field for property ID -->
-        <input type="hidden" name="landId" value="${land.id}">
+        <input type="hidden" name="id" value="${land.id}">
         
         <div class="form-group">
             <label for="parcelId">Parcel ID</label>

@@ -49,7 +49,7 @@
     				<a href="home.do" class="btn btn-secondary">Go Home</a>
 
    					 <form action="deleteProperty.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;">
-        				<input type="hidden" name="landId" value="${land.id}" />
+        				<input type="hidden" name="id" value="${land.id}" />
         				<button type="submit" class="btn btn-danger">Delete Property</button>
     				</form>
 </div>
