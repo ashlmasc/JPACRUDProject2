@@ -14,7 +14,7 @@
     
     <!-- Buttons for navigation -->
     <a href="home.do" class="btn btn-primary">Go Home</a>
-    <a href="getProperty.do?landAcquisitionId=${land.id}" class="btn btn-secondary">View Property Detail</a>
+    <a href="getPropertyDetail.do?landId=${land.id}" class="btn btn-secondary">View Property Detail</a>
     <a href="viewAllProperties.do" class="btn btn-info">View All Properties</a>
 </div>
 
