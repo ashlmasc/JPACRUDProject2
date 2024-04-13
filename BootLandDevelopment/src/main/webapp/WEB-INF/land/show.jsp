@@ -44,14 +44,14 @@
     			<div class="mb-3"><strong>Closing Date:</strong> ${land.closingDate}</div>
 
 <!--                 Update, Delete, and Home Buttons -->
-                <div class="text-center mt-4">
-<%--                     <a href="updatePart.do?partId=${part.id}" class="btn btn-primary">Update Property</a> --%>
-                    <a href="home.do" class="btn btn-secondary">Go Home</a>
-<!--                     <form action="deletePart.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;"> -->
-<%--                         <input type="hidden" name="landId" value="${land.id}"> --%>
-<!--                         <input type="submit" value="Delete Property" class="btn btn-danger"> -->
-<!--                     </form> -->
-                </div>
+ 				<div class="text-center mt-4">
+    				<a href="updateLand.do?landId=${land.id}" class="btn btn-primary">Update Property</a>
+    				<a href="home.do" class="btn btn-secondary">Go Home</a>
+    				<form action="deleteLand.do" method="post" onsubmit="return confirm('Are you sure you want to delete this property?');" style="display: inline-block;">
+       				 <input type="hidden" name="landId" value="${land.id}" />
+        			<button type="submit" class="btn btn-danger">Delete Property</button>
+    				</form>
+				</div>
             </c:when>
             <c:otherwise>
                 <div class="alert alert-danger" role="alert">

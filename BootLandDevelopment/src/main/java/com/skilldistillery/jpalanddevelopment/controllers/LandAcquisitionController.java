@@ -1,5 +1,7 @@
 package com.skilldistillery.jpalanddevelopment.controllers;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -55,8 +57,16 @@ public class LandAcquisitionController {
 		}
 	}
 	
+	@GetMapping("viewAllProperties.do")
+	public String viewAllProperties(Model model) {
+		List<LandAcquisition> land = landAcquisitionDAO.findAll();
+		model.addAttribute("allProperties", land);
+		return "listFormatPage"; // JSP page that displays the list
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public String handleException(Exception e, Model model) {
+		e.printStackTrace();
 	    model.addAttribute("errorMessage", e.getMessage());
 	    return "error"; 
 	}

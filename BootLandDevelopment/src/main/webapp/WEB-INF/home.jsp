@@ -28,22 +28,22 @@
     </div>
 
     <!-- View List of Parts Header -->
-<!--     <div class="row justify-content-center mb-4"> -->
-<!--         <div class="col-md-8 text-center"> -->
-<!--             <h2 class="h3 mb-3">View List of Properties</h2> -->
-<!--             Buttons for List and Table format -->
-<!--             <a href="viewAllPartsList.do" class="btn btn-outline-info mb-2">List Format</a> -->
-<!--             <a href="viewAllParts.do" class="btn btn-outline-info mb-2">Table Format</a> -->
-<!--         </div> -->
-<!--     </div> -->
+<div class="row justify-content-center mb-4">
+    <div class="col-md-8 text-center">
+        <h2 class="h3 mb-3">View List of Properties</h2>
+        <!-- Buttons for List and Table format -->
+        <a href="viewAllProperties.do"class="btn btn-outline-info mb-2">List Format</a>
+        <a href="viewAllLands.do" class="btn btn-outline-info mb-2">Table Format</a>
+    </div>
+</div>
 
-<!--     Add Part Button -->
-<!--     <div class="row justify-content-center"> -->
-<!--         <div class="col-md-8 text-center"> -->
-<!--             <a href="addPart.do" class="btn btn-outline-success">Add Part</a> -->
-<!--         </div> -->
-<!--     </div> -->
-<!-- </div> -->
+<!-- Add Property Button -->
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <a href="addProperty.do" class="btn btn-outline-success">Add Property</a>
+    </div>
+</div>
+
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
